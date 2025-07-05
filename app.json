@@ -4,10 +4,10 @@
     "slug": "CinemaVerse",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/iconA.png",
     "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/images/icon.png",
+      "image": "./assets/images/iconA.png",
       "resizeMode": "contain",
       "backgroundColor": "#0A1128"
     },
@@ -17,21 +17,27 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/iconCV.png",
         "backgroundColor": "#0A1128"
       },
-      "package": "com.username.cinemaverse"
+      "package": "com.muplihf.cinemaverse"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/iconCV.png"
     },
     "plugins": [
       "expo-router"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "947a5901-03db-4882-b695-b45b565cd52e"
+      }
     }
   }
 }
