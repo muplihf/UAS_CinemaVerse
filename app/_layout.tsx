@@ -86,11 +86,11 @@ const splashStyles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: width > 400 ? 38 : 32, // Responsive font size
+    fontSize: width > 400 ? 38 : 32,
     fontFamily: 'Poppins_700Bold',
-    letterSpacing: 0.5, // Dikurangi dari 1 ke 0.5
+    letterSpacing: 0.5,
     textAlign: 'center',
-    maxWidth: width - 40, // Pastikan tidak melebihi lebar layar
+    maxWidth: width - 40,
   },
   taglineContainer: {
     alignItems: 'center',
