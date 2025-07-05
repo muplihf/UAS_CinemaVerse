@@ -78,7 +78,7 @@ export default function HomeScreen() {
 
 const indexStyles = StyleSheet.create({
   container: { flex: 1, backgroundColor: Colors.background },
-  header: { paddingHorizontal: 20, paddingTop: 10, paddingBottom: 5, alignItems: 'flex-start' }, // alignItems agar gradien pas
-  headerTitle: { fontSize: 32, fontFamily: 'Poppins_700Bold' }, // Ukuran font disesuaikan
+  header: { paddingHorizontal: 20, paddingTop: 10, paddingBottom: 5, alignItems: 'flex-start' },
+  headerTitle: { fontSize: 32, fontFamily: 'Poppins_700Bold' },
   content: { flex: 1 },
 });
