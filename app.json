@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "CinemaVerse",
+    "slug": "CinemaVerse",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/images/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A1128"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.username.cinemaverse"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#0A1128"
+      },
+      "package": "com.username.cinemaverse"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
