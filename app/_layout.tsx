@@ -3,26 +3,27 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { SplashScreen, Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text } from 'react-native';
 import Animated, { FadeIn, FadeInDown, FadeInUp } from 'react-native-reanimated';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { GradientText } from '../components/GradientText';
 import { Colors } from '../constants/Colors';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 SplashScreen.preventAutoHideAsync();
 
 function CustomSplashScreen() {
   return (
-    <View style={splashStyles.container}>
-      <Animated.View 
+    <SafeAreaView style={splashStyles.container} edges={['top', 'bottom']}>
+      <Animated.View
         entering={FadeInUp.delay(200).duration(1000)}
         style={splashStyles.titleContainer}
       >
         <GradientText style={splashStyles.title}>CinemaVerse</GradientText>
       </Animated.View>
-      
-      <Animated.View 
+
+      <Animated.View
         entering={FadeInDown.delay(600).duration(800)}
         style={splashStyles.taglineContainer}
       >
@@ -34,7 +35,7 @@ function CustomSplashScreen() {
           style={splashStyles.line}
         />
       </Animated.View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -58,14 +59,16 @@ export default function RootLayout() {
 
   return (
     <Animated.View style={{ flex: 1 }} entering={FadeIn.duration(800)}>
-      <StatusBar style="light" />
-      <Stack screenOptions={{
-        headerStyle: { backgroundColor: Colors.background },
-        headerTintColor: Colors.text,
-        headerTitleStyle: { fontFamily: 'Poppins_700Bold' },
-        headerBackTitleVisible: false,
-        headerShadowVisible: false,
-      }}>
+      <StatusBar style="light" backgroundColor={Colors.background} />
+      <Stack
+        screenOptions={{
+          headerStyle: { backgroundColor: Colors.background },
+          headerTintColor: Colors.text,
+          headerTitleStyle: { fontFamily: 'Poppins_700Bold' },
+          headerBackTitleVisible: false,
+          headerShadowVisible: false,
+        }}
+      >
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="detail/[id]" options={{ title: 'Detail' }} />
       </Stack>
@@ -83,10 +86,10 @@ const splashStyles = StyleSheet.create({
   },
   titleContainer: {
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 12,
   },
   title: {
-    fontSize: width > 400 ? 38 : 32,
+    fontSize: width > 400 ? 36 : 30,
     fontFamily: 'Poppins_700Bold',
     letterSpacing: 0.5,
     textAlign: 'center',
@@ -100,7 +103,7 @@ const splashStyles = StyleSheet.create({
     fontFamily: 'Poppins_400Regular',
     color: Colors.muted,
     textAlign: 'center',
-    marginBottom: 16,
+    marginBottom: 10,
   },
   line: {
     height: 3,

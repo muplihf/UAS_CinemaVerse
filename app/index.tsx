@@ -20,7 +20,7 @@ export default function HomeScreen() {
 
   const handleSearch = useCallback(async () => {
     if (searchTerm.trim() === '') return;
-    
+
     setStatus('loading');
     setMovies([]);
     setErrorMsg('');
@@ -66,7 +66,7 @@ export default function HomeScreen() {
   };
 
   return (
-    <SafeAreaView style={indexStyles.container} edges={['top', 'left', 'right']}>
+    <SafeAreaView style={indexStyles.container} edges={['top', 'left', 'right', 'bottom']}>
       <View style={indexStyles.header}>
         <GradientText style={indexStyles.headerTitle}>CinemaVerse</GradientText>
       </View>

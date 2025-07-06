@@ -3,6 +3,7 @@
     "name": "CinemaVerse",
     "slug": "CinemaVerse",
     "version": "1.0.0",
+    "scheme": "cinemaverse",
     "orientation": "portrait",
     "icon": "./assets/images/iconA.png",
     "userInterfaceStyle": "dark",

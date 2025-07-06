@@ -50,20 +50,30 @@ export default function DetailScreen() {
   const genres = movie.Genre.split(', ');
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.background }} edges={['bottom']}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.background }} edges={['top', 'bottom']}>
       <ScrollView contentContainerStyle={detailStyles.content}>
-        <Image source={{ uri: movie.Poster !== 'N/A' ? movie.Poster : 'https://placehold.co/300x450/0A1128/FFFFFF?text=No+Image' }} style={detailStyles.poster} />
+        <Image
+          source={{ uri: movie.Poster !== 'N/A' ? movie.Poster : 'https://placehold.co/300x450/0A1128/FFFFFF?text=No+Image' }}
+          style={detailStyles.poster}
+        />
         <Text style={detailStyles.title}>{movie.Title}</Text>
         <Text style={detailStyles.meta}>{`${movie.Year} • ${movie.Rated} • ${movie.Runtime}`}</Text>
-        
+
         <DetailCard title="Plot"><DetailInfoText text={movie.Plot} /></DetailCard>
         <DetailCard title="Genres"><View style={detailStyles.genreContainer}>{genres.map((g) => <GenreChip key={g} genre={g} />)}</View></DetailCard>
         <DetailCard title="Director"><DetailInfoText text={movie.Director} /></DetailCard>
         <DetailCard title="Writer"><DetailInfoText text={movie.Writer} /></DetailCard>
         <DetailCard title="Cast"><DetailInfoText text={movie.Actors} /></DetailCard>
-        <DetailCard title="Country & Language"><DetailInfoText text={`Country: ${movie.Country}`}/><DetailInfoText text={`Language: ${movie.Language}`} /></DetailCard>
-        <DetailCard title="Box Office" iconName="dollar-sign"><DetailInfoText text={movie.BoxOffice} style={{ color: '#28a745', fontFamily: 'Poppins_700Bold' }} /></DetailCard>
-        <DetailCard title="Awards & Recognition" iconName="award"><DetailInfoText text={movie.Awards} /></DetailCard>
+        <DetailCard title="Country & Language">
+          <DetailInfoText text={`Country: ${movie.Country}`} />
+          <DetailInfoText text={`Language: ${movie.Language}`} />
+        </DetailCard>
+        <DetailCard title="Box Office" iconName="dollar-sign">
+          <DetailInfoText text={movie.BoxOffice} style={{ color: '#28a745', fontFamily: 'Poppins_700Bold' }} />
+        </DetailCard>
+        <DetailCard title="Awards & Recognition" iconName="award">
+          <DetailInfoText text={movie.Awards} />
+        </DetailCard>
       </ScrollView>
     </SafeAreaView>
   );
